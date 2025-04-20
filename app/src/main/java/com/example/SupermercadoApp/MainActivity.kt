@@ -1,14 +1,14 @@
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.ListView
+import android.widget.ArrayAdapter
 
-class MainActivity : AppCompatActivity()) {
-	private lateinit var supermercadoLista: ListView
-
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_main)
-
-		// Cria lista de supermercado
-		supermercadoLista = findViewById(R.id.supermercadoLista)
-	}
+class MainActivity : AppCompatActivity() {
+    val lista = ListView(this)
+    val itens = AppConfig().items
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+       val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itens.map { it.nome })
+        lista.adapter = adapter
+    }
 }
