@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Supermercado</string>
+    <string name="app_name">SupermercadoApp</string>
+    <string name="list_title">Lista de Supermercado</string>
 </resources>
